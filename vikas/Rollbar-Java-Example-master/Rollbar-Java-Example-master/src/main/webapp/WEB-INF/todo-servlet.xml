@@ -1,0 +1,84 @@
+
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.in28minutes" />
+
+	<mvc:annotation-driven />
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	<bean id="simpleMappingExceptionResolver" class="com.in28minutes.controller.MyMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">error</prop>
+			</props>
+		</property>
+		<property name="defaultErrorView" value="error" />
+		<property name="exceptionAttribute" value="ex" />
+	</bean>
+
+</beans> 
+
+
+ <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   					   http://www.springframework.org/schema/mvc
+	   					   http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	   					   http://www.springframework.org/schema/tx
+	   					   http://www.springframework.org/schema/tx/spring-tx.xsd
+	   					   http://www.springframework.org/schema/context
+	   					   http://www.springframework.org/schema/context/spring-context.xsd">
+	   					   
+		<mvc:annotation-driven />
+		
+		<context:component-scan base-package="com.in28minutes"></context:component-scan>
+	    <context:component-scan base-package="psquickit.status.ServiceImpl"></context:component-scan>
+	    <context:component-scan base-package="psquickit.status.DaoImpl"></context:component-scan>
+		
+		
+		<mvc:resources location="/resources/" mapping="/resources/**" />
+		
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB-INF/jsp/" />
+			<property name="suffix" value=".jsp" />
+		</bean>		
+		
+		<bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+          <property name="cacheSeconds" value="0"/>
+          <property name="useExpiresHeader" value="true"/>
+          <property name="useCacheControlHeader" value="true"/>
+          <property name="useCacheControlNoStore" value="true"/>
+        </bean>   	
+        
+        <bean id="simpleMappingExceptionResolver" class="com.in28minutes.controller.MyMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">error</prop>
+			</props>
+		</property>
+		<property name="defaultErrorView" value="error" />
+		<property name="exceptionAttribute" value="ex" />
+	   </bean>		   					   
+		
+		<tx:annotation-driven transaction-manager="txManager"></tx:annotation-driven>
+	
+</beans> -->
